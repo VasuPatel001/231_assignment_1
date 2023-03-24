@@ -1,0 +1,128 @@
+\input{CS231a.tex}
+
+\begin{document}
+
+\HomeworkHeader{0}{Sunday, January 9}
+
+This is a short tutorial on how to use Python and a review of some small linear algebra ideas.
+The point of this assignment is to get you used to manipulating matrices and images in Python with NumPy.
+
+Please put together a PDF with your results for each problem, and submit it to the appropriate assignment on Gradescope. 
+We recommend you to add these answers to the latex template files on our website, but you can also create a PDF in any other way you prefer.
+There will be an additional coding assignment on Gradescope that has an autograder and is there to help you double check your code. 
+Make sure you use the provided ".py" files to write your Python code. 
+Submit to both the PDF and code assignment, as we will be grading the PDF submissions and using the coding assignment to check your code if needed.
+
+\textbf{NOTE: This problem set is not representative of future problem sets in terms of length or difficulty, 
+but the logistics will be similar (submission, Piazza, etc).} 
+
+Most likely, you will find the future problem sets to be more difficult than this one. This problem set is simply to ensure 
+you have a sufficient understanding of the basic prerequisites for this class.
+
+Submit your published results to the class Gradescope (Code \textbf{6PGPN3}). Feel free to ask any questions to the 
+class Piazza forum (but use a private post if you have code or specifics to discuss).
+
+\section{Piazza}
+Please register on the class Piazza forum: \url{ piazza.com/stanford/winter2021/cs231a}.
+
+
+\section{Basic Matrix/Vector Manipulation (10 points)}
+In Python, please calculate the following. Given matrix M and vectors a,b,c such that
+\\
+
+	$M = \left[
+		\begin{matrix}
+		1 & 2 & 3 \\
+		4 & 5 & 6 \\
+		7 & 8 & 9 \\
+		0 & 2 & 2
+		\end{matrix} \right]$
+  ,
+	$a = \left[
+		\begin{matrix}
+		1 \\ 1 \\ 0
+		\end{matrix} \right]
+	$
+  ,
+	$b = \left[
+		\begin{matrix}
+		-1 \\ 2 \\ 5
+		\end{matrix} \right]
+  $
+  , 
+	$c = \left[
+		\begin{matrix}
+		0 \\ 2 \\ 3 \\ 2
+		\end{matrix} \right]
+	$
+
+\begin{itemize}
+	\item[(a)]
+	Define Matrix M and Vectors a,b,c in Python. One helpful Python package that is commonly used for linear
+    algebra related problems is Numpy.
+	\item[(b)]
+	Find the dot product of vectors a and b (i.e. $a^{\top} b$).
+  Save this value to the variable \texttt{aDotb} and write its value in your report.
+	\item[(c)]
+	Find the element-wise product of a and b $\left[a_1 b_1, a_2 b_2, a_3 b_3 \right]^T$ and write it in your report.
+	\item[(d)]
+	Find $(a^{\top} b) M a$ and write it in your report.
+	\item[(e)]
+	Without using a loop, multiply each row of M element-wise by a.
+  (Hint: The function numpy.tile() may come in handy). Write the result in your report.
+	\item[(f)]
+	Without using a loop, sort all of the values of the new M from (e) in increasing order
+	and plot them in your report.
+\end{itemize}
+
+\section{Basic Image Manipulations (20 points)}	
+\begin{itemize}
+	\item[(a)]
+	Read in the images, image1.jpg and image2.jpg, as color images.
+	
+	\item[(b)]
+	Convert the images to double precision and rescale them
+	to stretch from minimum value 0 to maximum value 1.
+	
+	\item[(c)]
+	Add the images together and re-normalize them to have minimum value 0
+	and maximum value 1. Display this image in your report.
+	
+	\item[(d)]
+	Create a new image such that the left half of the image is the left half of
+	image1 and the right half of the image is the right half of image2. Display this image in your report.
+	
+	\item[(e)]
+	Using a for loop, create a new image such that every odd numbered row is
+	the corresponding row from image1 and the every even row is the corresponding row
+	from image2 (Hint: Remember that indices start at 0 and not 1 in Python). Display this image in your report.
+	
+	\item[(f)]
+	Accomplish the same task as part e without using a for-loop (the functions reshape and
+  tile may be helpful here).
+	
+	\item[(g)]
+	Convert the result from part f to a grayscale image. Display the grayscale image with
+	a title in your report.
+\end{itemize}
+	
+\section{Singular Value Decomposition (20 points)}
+\begin{itemize}
+	\item[(a)]
+	Read in image1 as a grayscale image. Take the singular value
+	decomposition of the image.
+
+	\item[(b)]
+  Recall from the discussion section that the best rank n approximation of a
+  matrix is $\displaystyle\sum\limits_{i_=1}^{i=n}u_i \sigma_i v_i^{\top}$, 
+  where $u_i$, $\sigma_i$,
+  and $v_i$ are the ith left singular vector, singular value, and right singular
+  vector respectively.
+	Save and display the best rank 1 approximation of the (grayscale) image1 in your report.
+
+	\item[(c)]
+	Save and display the best rank 20 approximation of the (grayscale) image1 in your report.
+\end{itemize}
+
+\end{document}
+
